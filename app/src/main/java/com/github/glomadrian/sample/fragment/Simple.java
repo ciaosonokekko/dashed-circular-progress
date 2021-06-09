@@ -1,13 +1,14 @@
 package com.github.glomadrian.sample.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.github.glomadrian.dashedcircularprogress.DashedCircularProgress;
 import com.github.glomadrian.sample.R;
@@ -36,24 +37,14 @@ public class Simple extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         restartButton = (Button) view.findViewById(R.id.restart);
-        dashedCircularProgress = (DashedCircularProgress) view.findViewById(R.id.simple);
-        numbers = (TextView) view.findViewById(R.id.number);
+        dashedCircularProgress = view.findViewById(R.id.simple);
+        numbers = view.findViewById(R.id.number);
         animate();
 
-        restartButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                restart();
-            }
-        });
+        restartButton.setOnClickListener(view1 -> restart());
 
         dashedCircularProgress.setOnValueChangeListener(
-                new DashedCircularProgress.OnValueChangeListener() {
-                    @Override
-                    public void onValueChange(float value) {
-                        numbers.setText((int) value + "");
-                    }
-                });
+                value -> numbers.setText((int) value + ""));
     }
 
     public static Simple getInstance() {

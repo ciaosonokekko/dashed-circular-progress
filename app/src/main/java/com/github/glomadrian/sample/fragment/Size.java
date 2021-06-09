@@ -1,8 +1,6 @@
 package com.github.glomadrian.sample.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +8,12 @@ import android.view.animation.AccelerateInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import androidx.fragment.app.Fragment;
+
 import com.github.glomadrian.dashedcircularprogress.DashedCircularProgress;
 import com.github.glomadrian.sample.R;
+
+import org.jetbrains.annotations.Nullable;
 
 /**
  * @author Adrián García Lomas

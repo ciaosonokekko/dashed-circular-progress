@@ -2,8 +2,9 @@ package com.github.glomadrian.dashedcircularprogress.utils;
 
 import android.annotation.TargetApi;
 import android.os.Build;
-import android.support.v4.view.ViewPager;
 import android.view.View;
+
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * Thanks to OrangeGangsters
@@ -12,10 +13,9 @@ import android.view.View;
  * @link http://goo.gl/rJaZtH
  */
 public class ViewPagerTransformer implements ViewPager.PageTransformer {
-
     /**
      * Used for adding a fadein/fadeout animation in the ViewPager transition.
-     * Must be used with {@link android.support.v4.view.ViewPager#setPageTransformer(boolean, android.support.v4.view.ViewPager.PageTransformer)}
+     * Must be used with {@link androidx.core.view.ViewPager#setPageTransformer(boolean, androidx.core.view.ViewPager.PageTransformer)}
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public void transformPage(View view, float position) {
