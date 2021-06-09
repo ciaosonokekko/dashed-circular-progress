@@ -113,7 +113,7 @@ public class DashedCircularProgress extends RelativeLayout {
                 internalBaseColor);
         progressColor = attributes.getColor(R.styleable.DashedCircularProgress_progress_color,
                 progressColor);
-        max = attributes.getFloat(R.styleable.DashedCircularProgress_max, max);
+        max = attributes.getFloat(R.styleable.DashedCircularProgress_circularMax, max);
         duration = attributes.getInt(R.styleable.DashedCircularProgress_duration, duration);
         image = BitmapFactory.decodeResource(getResources(), attributes
                 .getResourceId(R.styleable.DashedCircularProgress_progress_icon,
