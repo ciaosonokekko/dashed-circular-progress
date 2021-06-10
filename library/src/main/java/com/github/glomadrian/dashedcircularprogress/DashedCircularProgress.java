@@ -27,10 +27,10 @@ import com.github.glomadrian.dashedcircularprogress.painter.ProgressPainterImp;
  */
 public class DashedCircularProgress extends RelativeLayout {
 
-    private ExternalCirclePainter externalCirclePainter;
+//    private ExternalCirclePainter externalCirclePainter;
     private InternalCirclePainter internalCirclePainter;
     private ProgressPainter progressPainter;
-    private IconPainter iconPainter;
+//    private IconPainter iconPainter;
     private Bitmap image;
     private Interpolator interpolator = new AccelerateDecelerateInterpolator();
     private int externalColor = Color.WHITE;
@@ -43,7 +43,7 @@ public class DashedCircularProgress extends RelativeLayout {
     private OnValueChangeListener valueChangeListener;
     private float value;
     private int duration = 1000;
-    private int padingTop = 22;
+    private int padingTop = 0;
     private int heightNormalittation = 10;
     private int progressStrokeWidth = 48;
 
@@ -126,17 +126,17 @@ public class DashedCircularProgress extends RelativeLayout {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         progressPainter.onSizeChanged(h, w);
-        externalCirclePainter.onSizeChanged(h, w);
+//        externalCirclePainter.onSizeChanged(h, w);
         internalCirclePainter.onSizeChanged(h, w);
-        iconPainter.onSizeChanged(h, w);
+//        iconPainter.onSizeChanged(h, w);
         animateValue();
     }
 
     private void initPainters() {
         progressPainter = new ProgressPainterImp(progressColor, min, max, progressStrokeWidth);
-        externalCirclePainter = new ExternalCirclePainterImp(externalColor);
+//        externalCirclePainter = new ExternalCirclePainterImp(externalColor);
         internalCirclePainter = new InternalCirclePainterImp(internalBaseColor);
-        iconPainter = new IconPainter(image);
+//        iconPainter = new IconPainter(image);
     }
 
     private void initValueAnimator() {
@@ -148,10 +148,10 @@ public class DashedCircularProgress extends RelativeLayout {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        externalCirclePainter.draw(canvas);
+//        externalCirclePainter.draw(canvas);
         internalCirclePainter.draw(canvas);
         progressPainter.draw(canvas);
-        iconPainter.draw(canvas);
+//        iconPainter.draw(canvas);
         invalidate();
     }
 
@@ -224,10 +224,10 @@ public class DashedCircularProgress extends RelativeLayout {
     }
 
     public void setIcon(int drawable) {
-        if (iconPainter != null) {
-            iconPainter.setImage(BitmapFactory.decodeResource(getContext().getResources(),
-                    drawable));
-        }
+//        if (iconPainter != null) {
+//            iconPainter.setImage(BitmapFactory.decodeResource(getContext().getResources(),
+//                    drawable));
+//        }
     }
 
     public void reset() {
@@ -258,7 +258,7 @@ public class DashedCircularProgress extends RelativeLayout {
 
     public void setExternalColor(int externalColor) {
         this.externalColor = externalColor;
-        externalCirclePainter.setColor(externalColor);
+//        externalCirclePainter.setColor(externalColor);
     }
 
     public int getDuration() {
